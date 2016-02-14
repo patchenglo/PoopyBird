@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FreeflightCamera : MonoBehaviour 
 {
+	private Rigidbody rb;
     public float speedNormal = 10.0f;
     public float speedFast   = 50.0f;
 
@@ -13,8 +14,7 @@ public class FreeflightCamera : MonoBehaviour
     
 	void Start()
 	{
-		if (GetComponent<Rigidbody>())
-			GetComponent<Rigidbody>().freezeRotation = true;
+		rb = GetComponent<Rigidbody>();
 	}
 
 	void Update()
@@ -31,6 +31,7 @@ public class FreeflightCamera : MonoBehaviour
 		if (Input.GetKey(KeyCode.U))
 		{
 			gameObject.transform.localPosition = new Vector3(0.0f, 3500.0f, 0.0f);
+
 		}
 		
         float forward = Input.GetAxis("Vertical");
@@ -40,16 +41,16 @@ public class FreeflightCamera : MonoBehaviour
         if (forward != 0.0f)  
         {
             float speed = Input.GetKey(KeyCode.LeftShift) ? speedFast : speedNormal;
-            Vector3 trans = new Vector3(0.0f, 0.0f, forward * speed * Time.deltaTime);
-            gameObject.transform.localPosition += gameObject.transform.localRotation * trans;
+			Vector3 movement = new Vector3 (strafe, 0.0f, forward);
+			rb.AddForce (movement * speed);
         }
 
         // strafe left/right
         if (strafe != 0.0f) 
         {
             float speed = Input.GetKey(KeyCode.LeftShift) ? speedFast : speedNormal;
-            Vector3 trans = new Vector3(strafe * speed * Time.deltaTime, 0.0f, 0.0f);
-            gameObject.transform.localPosition += gameObject.transform.localRotation * trans;
+			Vector3 movement = new Vector3 (strafe, 0.0f, forward);
+			rb.AddForce (movement * speed);
         }
 	}
 }
