@@ -45,3 +45,27 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# =============== #
+# Unity generated #
+# =============== #
+PoopyBird/[Tt]emp/
+PoopyBird/[Oo]bj/
+PoopyBird/[Bb]uild
+PoopyBird/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+PoopyBird/[Ee]xported[Oo]bj/
+PoopyBird/.vs/
+ /*.userprefs
+ /*.csproj
+ /*.pidb
+ /*.suo
+ /*.sln*
+ /*.user
+ /*.unityproj
+ /*.booproj
