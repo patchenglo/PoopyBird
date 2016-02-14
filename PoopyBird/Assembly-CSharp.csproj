@@ -65,6 +65,7 @@
      <Compile Include="Assets\DualCorStudios\BasicUIConcrete\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\DualCorStudios\BasicUIConcrete\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <Compile Include="Assets\Game\MoveTo.cs" />
+     <Compile Include="Assets\Game\PingCollision.cs" />
      <Compile Include="Assets\TutorialAssets\Scripts\FreeflightCamera.cs" />
      <Compile Include="Assets\TutorialAssets\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\TutorialAssets\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
